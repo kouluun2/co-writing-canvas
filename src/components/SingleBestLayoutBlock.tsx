@@ -94,11 +94,11 @@ export function SingleBestLayoutBlock({
 
       {/* 1. ステップ・フローレイアウト */}
       {isStep && (
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 relative">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 relative">
           {layout.elements.map((elem, idx) => (
             <div key={elem.id || idx} className="relative flex flex-col">
-              <div className="flex-1 rounded-xl border border-blue-200/90 bg-blue-50/40 p-3 shadow-2xs hover:bg-blue-50/70 transition-colors">
-                <div className="flex items-center justify-between mb-1.5">
+              <div className="flex-1 rounded-xl border border-blue-200/90 bg-blue-50/50 p-2.5 sm:p-3 shadow-2xs hover:bg-blue-50/70 transition-colors">
+                <div className="flex items-center justify-between mb-1">
                   <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-blue-600 text-white text-[10px] font-bold">
                     {idx + 1}
                   </span>
@@ -114,7 +114,7 @@ export function SingleBestLayoutBlock({
                     onUpdateElement?.(idx, { originalText: e.target.value })
                   }
                   rows={2}
-                  className="w-full text-xs text-slate-800 bg-transparent resize-none focus:outline-none focus:bg-white rounded p-1 leading-relaxed font-medium"
+                  className="w-full text-xs text-slate-800 bg-transparent resize-none focus:outline-none focus:bg-white rounded p-0.5 leading-relaxed font-medium"
                 />
               </div>
 

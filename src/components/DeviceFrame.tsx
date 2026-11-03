@@ -12,27 +12,27 @@ interface DeviceFrameProps {
 export function DeviceFrame({ device, children }: DeviceFrameProps) {
   if (device === 'iphone') {
     return (
-      <div className="flex justify-center items-center py-2 md:py-4">
-        {/* iPhone 16 Pro モックアップフレーム */}
-        <div className="relative w-[390px] h-[780px] bg-black rounded-[52px] p-[11px] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5),0_0_0_1px_rgba(255,255,255,0.15)] ring-1 ring-slate-800 flex flex-col transition-all duration-300">
-          {/* ボリュームボタン・電源ボタン（サイドの突起） */}
-          <div className="absolute -left-[14px] top-[115px] w-[3px] h-[26px] bg-slate-700 rounded-l-sm" />
-          <div className="absolute -left-[14px] top-[155px] w-[3px] h-[48px] bg-slate-700 rounded-l-sm" />
-          <div className="absolute -left-[14px] top-[215px] w-[3px] h-[48px] bg-slate-700 rounded-l-sm" />
-          <div className="absolute -right-[14px] top-[170px] w-[3px] h-[65px] bg-slate-700 rounded-r-sm" />
+      <div className="flex justify-center items-center py-2 md:py-4 w-full">
+        {/* iPhone 16 Pro モックアップフレーム（大画面時はリアル枠、スマホ時は画面全幅） */}
+        <div className="relative w-full max-w-[390px] h-[780px] bg-black rounded-[48px] p-[10px] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5),0_0_0_1px_rgba(255,255,255,0.15)] ring-1 ring-slate-800 flex flex-col transition-all duration-300">
+          {/* ボリュームボタン・電源ボタン（サイドの突起 - PC/タブレット時のみ） */}
+          <div className="hidden sm:block absolute -left-[14px] top-[115px] w-[3px] h-[26px] bg-slate-700 rounded-l-sm" />
+          <div className="hidden sm:block absolute -left-[14px] top-[155px] w-[3px] h-[48px] bg-slate-700 rounded-l-sm" />
+          <div className="hidden sm:block absolute -left-[14px] top-[215px] w-[3px] h-[48px] bg-slate-700 rounded-l-sm" />
+          <div className="hidden sm:block absolute -right-[14px] top-[170px] w-[3px] h-[65px] bg-slate-700 rounded-r-sm" />
 
           {/* iPhone スクリーン内部 */}
-          <div className="relative w-full h-full bg-slate-900 rounded-[42px] overflow-hidden flex flex-col">
+          <div className="relative w-full h-full bg-white rounded-[38px] overflow-hidden flex flex-col shadow-inner">
             {/* iOS ステータスバー & Dynamic Island */}
-            <div className="relative h-11 w-full flex items-center justify-between px-7 pt-1 z-30 select-none bg-white/90 backdrop-blur-md">
+            <div className="relative h-11 w-full flex items-center justify-between px-7 pt-1 z-30 select-none bg-slate-50/90 border-b border-slate-200/60 backdrop-blur-md shrink-0">
               <span className="text-[13px] font-semibold text-slate-900 tracking-tight">
                 9:41
               </span>
 
               {/* Dynamic Island */}
-              <div className="absolute left-1/2 -translate-x-1/2 top-2 w-[100px] h-[28px] bg-black rounded-full flex items-center justify-between px-2.5 shadow-xs">
-                <div className="w-2.5 h-2.5 rounded-full bg-slate-900 ring-1 ring-slate-800" />
-                <div className="w-2 h-2 rounded-full bg-indigo-500/80" />
+              <div className="absolute left-1/2 -translate-x-1/2 top-2 w-[96px] h-[26px] bg-black rounded-full flex items-center justify-between px-2.5 shadow-xs">
+                <div className="w-2 h-2 rounded-full bg-slate-900 ring-1 ring-slate-800" />
+                <div className="w-1.5 h-1.5 rounded-full bg-indigo-500/80" />
               </div>
 
               <div className="flex items-center gap-1.5 text-slate-800">
@@ -48,7 +48,7 @@ export function DeviceFrame({ device, children }: DeviceFrameProps) {
             </div>
 
             {/* iOS ホームインジケーター（下部バー） */}
-            <div className="absolute bottom-1 left-1/2 -translate-x-1/2 w-32 h-1 bg-slate-800/60 rounded-full z-30 pointer-events-none" />
+            <div className="absolute bottom-1 left-1/2 -translate-x-1/2 w-32 h-1 bg-slate-800/40 rounded-full z-30 pointer-events-none" />
           </div>
         </div>
       </div>
@@ -58,18 +58,18 @@ export function DeviceFrame({ device, children }: DeviceFrameProps) {
   // iPad Pro モックアップフレーム
   return (
     <div className="w-full h-full flex justify-center items-center py-1">
-      <div className="relative w-full max-w-[1080px] h-[740px] md:h-[760px] bg-slate-900 rounded-[38px] p-[14px] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.4),0_0_0_1px_rgba(255,255,255,0.1)] ring-1 ring-slate-800 flex flex-col transition-all duration-300">
+      <div className="relative w-full max-w-[1080px] h-[720px] md:h-[760px] bg-slate-900 rounded-[32px] md:rounded-[38px] p-[10px] md:p-[14px] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.4),0_0_0_1px_rgba(255,255,255,0.1)] ring-1 ring-slate-800 flex flex-col transition-all duration-300">
         {/* Apple Pencil マグネット充電部（上部） */}
-        <div className="absolute -top-[3px] left-1/2 -translate-x-1/2 w-28 h-[3px] bg-slate-700/80 rounded-t-sm" />
+        <div className="hidden sm:block absolute -top-[3px] left-1/2 -translate-x-1/2 w-28 h-[3px] bg-slate-700/80 rounded-t-sm" />
 
         {/* iPad スクリーン内部 */}
-        <div className="relative w-full h-full bg-white rounded-[26px] overflow-hidden flex flex-col shadow-inner">
+        <div className="relative w-full h-full bg-white rounded-[22px] md:rounded-[26px] overflow-hidden flex flex-col shadow-inner">
           {/* iPadOS 上部ステータスバー */}
-          <div className="h-7 w-full flex items-center justify-between px-6 select-none bg-slate-100/90 border-b border-slate-200/80 text-[11px] font-medium text-slate-700 z-30">
+          <div className="h-7 w-full flex items-center justify-between px-6 select-none bg-slate-100/90 border-b border-slate-200/80 text-[11px] font-medium text-slate-700 z-30 shrink-0">
             <div className="flex items-center gap-2">
               <span className="font-semibold text-slate-900">9:41 火 11月3日</span>
               <span className="text-[10px] text-indigo-700 bg-indigo-50 px-1.5 py-0.2 rounded font-bold">
-                iPadOS 18
+                iPadOS
               </span>
             </div>
 

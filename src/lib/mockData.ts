@@ -43,6 +43,35 @@ export const HANDWRITING_MARKDOWN_SAMPLES = [
   },
 ];
 
+export const DEFAULT_NOTE_PRESETS = [
+  {
+    id: 'preset-1',
+    title: 'AI活用とエンジニア進化',
+    text: HANDWRITING_MARKDOWN_SAMPLES[0].markdown,
+  },
+  {
+    id: 'preset-2',
+    title: '初期SaaSのトラクション獲得',
+    text: HANDWRITING_MARKDOWN_SAMPLES[1].markdown,
+  },
+  {
+    id: 'preset-3',
+    title: 'リモートチームの改善',
+    text: `## リモートワークの課題と新ルール
+
+### 以前のやり方
+- Slackの分報を作っただけ、義務感のある飲み会
+- テキストのニュアンスで誤解が生じて摩擦
+
+### 改善後の新ルール
+1. 毎朝15分の雑談スタンドアップを音声で実施
+2. 迷ったら即ハドルで5分画面共有
+3. 過程の思考メモをドキュメント化して非同期共有
+
+> 結果：心理的安全性が高まり、意思決定スピードが2倍になった`,
+  },
+];
+
 /**
  * ユーザーが指定したMarkdown箇所をAIが判断し、
  * 【一番良いと判断した1つのレイアウトだけ】を決定する。

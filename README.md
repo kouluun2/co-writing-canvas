@@ -1,5 +1,7 @@
 # Smart Notes Canvas (iPad & iPhone AI Note Layout)
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fkouluun2%2Fco-writing-canvas)
+
 iPadおよびiPhoneの画面で動作する、手書き文字認識・Markdown変換・AI単一ベストレイアウト自動展開アプリです。
 
 ---
